@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">FirebaseAuth</string>
+    <string name="google_status_fmt">Google User: %s</string>
 </resources>

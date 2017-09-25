@@ -17,8 +17,9 @@ android:
 
     # Additional components
     - extra-google-google_play_services
-    #- extra-google-m2repository
-    #- extra-android-m2repository
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - extra-android-support
     #- addon-google_apis-google-19
 
     # Specify at least one system image,
@@ -26,5 +27,14 @@ android:
     #- sys-img-armeabi-v7a-android-26
 
   licenses:
+    - 'android-sdk-preview-license-.+'
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
+
+install:
+  # List and delete unnecessary components to free space
+  - sdkmanager --list || true
+
+script:
+    - ./gradlew clean build
+

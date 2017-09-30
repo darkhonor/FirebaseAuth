@@ -14,8 +14,8 @@ cache:
 
 env:
   global:
-    - ANDROID_API_LEVEL=25
-    - ANDROID_BUILD_TOOLS_VERSION=25.2.5
+    - ANDROID_API_LEVEL=22
+    - ANDROID_BUILD_TOOLS_VERSION=22.0.1
     - ADB_INSTALL_TIMEOUT=5 # minutes
     - ANDROID_ABI=google_apis/armeabi-v7a
 
@@ -58,7 +58,7 @@ before_install:
 
 before_script:
 # Launch emulator before the execution
-    - echo no | android create avd --force -n test -t android-25 --abi google_apis/armeabi-v7a
+    - echo no | android create avd --force -n test -t android-22 --abi google_apis/armeabi-v7a
     - emulator -avd test -no-audio -no-window &
     - android-wait-for-emulator
     - adb shell input keyevent 82 &
